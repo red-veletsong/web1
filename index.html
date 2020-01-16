@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>국제 - My Fridens</title>
+    <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700,900&display=swap&subset=korean" rel="stylesheet">
+    <style>
+        body{font-family: 'Noto Sans KR', sans-serif; background: url(images/bg.png) no-repeat; background-size:cover;}
+        button{border:0; background-color:transparent;}
+        .hidden{position:absolute; top:-9999px;}
+        
+        #box{width:640px; margin:auto;}
+        header{background:#7c7c9a; position:relative;}
+        header h1{text-align: center; font-size:2em; color:#fff; padding:23px 0;}
+        header button{position:absolute;top:23px;}
+        header .btn1{left:8px;}
+        header .btn2{right:8px;;}
+        
+        section{}
+        section ul{overflow: hidden;}
+        section ul li{border-bottom:2px solid #fff; clear:both; overflow: hidden; position:relative; left:-45%; width:145%; transition:0.5s;}
+/*        section ul li:nth-child(3){left:0;}*/
+        .editBox{width:30%;/*부모 기준으로 프로필이 '100인데 이동+움직이는 editBox 사이즈' 추가*/
+       box-sizing:border-box;float:left;
+            padding:46px 54px; background-color:rgba(255, 255, 255, .5); position:relative;
+        } 
+        .editBox button{}
+        .editBox .btn3{}
+        .editBox .btn4{}
+        .editBox .btn5{}
+        .editBox .tri{
+              width: 0px;height: 0px;
+              border-top:10px solid transparent;
+              border-bottom:10px solid transparent;
+              border-right: 10px solid transparent;
+              border-left: 10px solid rgba(255, 255, 255, .5);
+              position:absolute; right:-20px; top:calc(50% - 10px);
+        }
+        .proBox{width:70%; /*background-color:aquamarine; */float:right; padding:18px 32px; box-sizing: border-box;}
+        .proBox>img{float:left; margin-right: 20px;}
+        .proBox .fName{font-size:26px;margin-top:20px;}
+        .proBox .fPos{margin-top:10px;}
+        .proBox .fPos img{position:relative; top:4px; margin-right:8px;}
+        
+        footer{padding:3em; background:rgba(0, 0, 0, 0.2);}
+        footer h3{text-align: center;}
+        
+    </style>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script>
+    $(function(){
+        var st = false; //안보이는 상태
+        $('.proBox').click(function(){
+            //$('section ul li').css('left', '0');
+           
+            if(st == false){
+                $('section ul li').css('left', '-45%');//순서중요:다 들어가게 한 후에 내것만 나오게
+                $(this).parent('li').css('left', '0'); 
+                st = true; //보이는 상태를 저장
+                
+            }else{
+                $(this).parent('li').css('left', '-45%'); 
+                st = false;
+            }
+        });
+    });
+    </script>
+    
+</head>
+<body>
+    <div id="box">
+      <header>
+          <h1>My Friends</h1>
+          <button class="btn1"><img src="images/ico1.png" alt="메뉴"></button>
+          <button class="btn2"><img src="images/ico2.png" alt="검색"></button>
+      </header> 
+      <section>
+          <h2 class="hidden">친구목록</h2>
+          <ul>
+              <li>
+                  <div class="editBox">
+                      <button class="btn3">
+                          <img src="images/ico3.png" alt="추가">
+                      </button>
+                      <button class="btn4">
+                          <img src="images/ico4.png" alt="삭제">
+                      </button>
+                      <button class="btn5">
+                          <img src="images/ico5.png" alt="편집">
+                      </button>
+                      <div class="tri"></div>
+                  </div><!--낙타방법(예전방법은 언더바(_))-->
+                  
+                  <div class="proBox">
+                      <img src="images/02.png" alt="프사">
+                      <p class="fName">Jeon Jihyun</p>
+                      <p class="fPos"><img src="images/ico6.png" alt="위치">Seoul, Korea</p>
+                  </div>
+              </li>
+              <li>
+                  <div class="editBox">
+                      <button class="btn3">
+                          <img src="images/ico3.png" alt="추가">
+                      </button>
+                      <button class="btn4">
+                          <img src="images/ico4.png" alt="삭제">
+                      </button>
+                      <button class="btn5">
+                          <img src="images/ico5.png" alt="편집">
+                      </button>
+                          <div class="tri"></div>
+                  </div>
+              
+                  <div class="proBox">
+                      <img src="images/03.png" alt="프사">
+                      <p class="fName">Clala</p>
+                      <p class="fPos"><img src="images/ico6.png" alt="위치">Seoul, Korea</p>
+                  </div>
+              </li>
+              <li>
+                  <div class="editBox">
+                      <button class="btn3">
+                          <img src="images/ico3.png" alt="추가">
+                      </button>
+                      <button class="btn4">
+                          <img src="images/ico4.png" alt="삭제">
+                      </button>
+                      <button class="btn5">
+                          <img src="images/ico5.png" alt="편집">
+                      </button>
+                       <div class="tri"></div>
+                  </div>
+                 
+                  <div class="proBox">
+                      <img src="images/01.png" alt="프사">
+                      <p class="fName">Cindy</p>
+                      <p class="fPos"><img src="images/ico6.png" alt="위치">Seoul, Korea</p>
+                  </div>
+              </li>
+                  <li>
+                  <div class="editBox">
+                      <button class="btn3">
+                          <img src="images/ico3.png" alt="추가">
+                      </button>
+                      <button class="btn4">
+                          <img src="images/ico4.png" alt="삭제">
+                      </button>
+                      <button class="btn5">
+                          <img src="images/ico5.png" alt="편집">
+                      </button>
+                      <div class="tri"></div>
+                  </div>
+                  
+                  <div class="proBox">
+                      <img src="images/04.png" alt="프사">
+                      <p class="fName">Namu</p>
+                      <p class="fPos"><img src="images/ico6.png" alt="위치">Seoul, Korea</p>
+                  </div>
+              </li>
+              <li>
+                  <div class="editBox">
+                      <button class="btn3">
+                          <img src="images/ico3.png" alt="추가">
+                      </button>
+                      <button class="btn4">
+                          <img src="images/ico4.png" alt="삭제">
+                      </button>
+                      <button class="btn5">
+                          <img src="images/ico5.png" alt="편집">
+                      </button>
+                       <div class="tri"></div>
+                  </div>
+                 
+                  <div class="proBox">
+                      <img src="images/05.png" alt="프사">
+                      <p class="fName">Sky Kim</p>
+                      <p class="fPos"><img src="images/ico6.png" alt="위치">Seoul, Korea</p>
+                  </div>
+               </li>
+               <li>
+                  <div class="editBox">
+                      <button class="btn3">
+                          <img src="images/ico3.png" alt="추가">
+                      </button>
+                      <button class="btn4">
+                          <img src="images/ico4.png" alt="삭제">
+                      </button>
+                      <button class="btn5">
+                          <img src="images/ico5.png" alt="편집">
+                      </button>
+                      <div class="tri"></div>
+                  </div>
+                  
+                  <div class="proBox">
+                      <img src="images/06.png" alt="프사">
+                      <p class="fName">Joy</p>
+                      <p class="fPos"><img src="images/ico6.png" alt="위치">Seoul, Korea</p>
+                  </div>
+               </li>
+                <li>
+                  <div class="editBox">
+                      <button class="btn3">
+                          <img src="images/ico3.png" alt="추가">
+                      </button>
+                      <button class="btn4">
+                          <img src="images/ico4.png" alt="삭제">
+                      </button>
+                      <button class="btn5">
+                          <img src="images/ico5.png" alt="편집">
+                      </button>
+                      <div class="tri"></div>
+                  </div>
+                  
+                  <div class="proBox">
+                      <img src="images/07.png" alt="프사">
+                      <p class="fName">Jessica</p>
+                      <p class="fPos"><img src="images/ico6.png" alt="위치">Seoul, Korea</p>
+                  </div>
+               </li>
+                <li>
+                  <div class="editBox">
+                      <button class="btn3">
+                          <img src="images/ico3.png" alt="추가">
+                      </button>
+                      <button class="btn4">
+                          <img src="images/ico4.png" alt="삭제">
+                      </button>
+                      <button class="btn5">
+                          <img src="images/ico5.png" alt="편집">
+                      </button>
+                      <div class="tri"></div>
+                  </div>
+                  
+                  <div class="proBox">
+                      <img src="images/08.png" alt="프사">
+                      <p class="fName">Ryan</p>
+                      <p class="fPos"><img src="images/ico6.png" alt="위치">Seoul, Korea</p>
+                  </div>
+               </li>
+          </ul>
+      </section> 
+      <footer>
+          <h3>copyright 2020 by Gukje</h3>
+      </footer>
+    </div>
+</body>
+</html>
